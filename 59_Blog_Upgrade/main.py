@@ -11,11 +11,6 @@ def home():
     return render_template("index.html", posts=all_posts)
 
 
-@app.route('/index')
-def index():
-    return render_template("index.html", posts=all_posts)
-
-
 @app.route('/about')
 def about():
     return render_template("about.html")
