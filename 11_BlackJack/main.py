@@ -4,10 +4,12 @@ from art import logo
 import random
 import os
 
+
 def deal_card() -> int:
     """Returns a random card from the deck."""
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     return random.choice(cards)
+
 
 def calculate_score(cards: list[int]) -> int:
     score = sum(cards)
@@ -18,6 +20,7 @@ def calculate_score(cards: list[int]) -> int:
         cards.remove(11)
         cards.append(1)
     return sum(cards)
+
 
 def compare(user: int, computer: int) -> None:
     if user == computer:
@@ -36,7 +39,8 @@ def compare(user: int, computer: int) -> None:
         else:
             print("You lose")
 
-play = input("Do you want to play a game of Blackjack? Type 'y' or 'n': " ).lower()
+
+play = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
 
 while play == "y":
     print(logo)
@@ -52,7 +56,7 @@ while play == "y":
 
     continue_dealing = 1
     while continue_dealing:
-        if computer_score == 0 or user_score == 0 or user_score >21:
+        if computer_score == 0 or user_score == 0 or user_score > 21:
             # Game ends
             print(f"  Your final hand: {user_cards}, final score: {sum(user_cards)}")
             print(f"  Computer's final hand: {computer_cards}, final score: {sum(computer_cards)}")
@@ -75,5 +79,5 @@ while play == "y":
                 print(f"  Computer's final hand: {computer_cards}, final score: {sum(computer_cards)}")
                 compare(user_score, computer_score)
                 continue_dealing = 0
-    play = input("Do you want to play a game of Blackjack? Type 'y' or 'n': " ).lower()
+    play = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
     os.system('cls')
