@@ -1,24 +1,29 @@
 from art import logo
 
+
 def add(a, b):
     return a + b
+
 
 def substract(a, b):
     return a - b
 
+
 def multiply(a, b):
     return a * b
+
 
 def divide(a, b):
     return a / b
 
 
 operations = {
-    "+" : add,
-    "-" : substract,
-    "*" : multiply,
-    "/" : divide
+    "+": add,
+    "-": substract,
+    "*": multiply,
+    "/": divide
 }
+
 
 def calculator():
     print(logo)
@@ -26,9 +31,9 @@ def calculator():
     num1 = float(input("What's the first number?: "))
     for oper in operations:
         print(oper)
-    shoudl_continue = True
+    should_continue = True
 
-    while shoudl_continue:
+    while should_continue:
         oper_symbol = input("Pick an operation from the line above: ")
         num2 = float(input("What's the second number?: "))
 
@@ -43,7 +48,8 @@ def calculator():
         if continue_oper == "y":
             num1 = answer
         else:
-            shoudl_continue = False
+            should_continue = False
             calculator()
+
 
 calculator()

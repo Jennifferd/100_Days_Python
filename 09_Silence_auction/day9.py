@@ -9,7 +9,7 @@ more = True
 
 while more:
     name = input("What is your name?: ")
-    bid = int (input("What's your bid?: $"))
+    bid = int(input("What's your bid?: $"))
     more_bids = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
     bids_dict[name] = bid
     if more_bids == 'no':
